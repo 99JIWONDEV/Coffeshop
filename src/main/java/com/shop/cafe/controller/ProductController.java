@@ -17,7 +17,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
-	Map<String, Object> storage = new HashMap();	
+	Map<String, Object> storage = new HashMap();
 	
 	@GetMapping("getAllProducts")
 	public List<Product> getAllProducts(){
