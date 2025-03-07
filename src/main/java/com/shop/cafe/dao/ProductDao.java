@@ -26,10 +26,10 @@ public class ProductDao {
 	public List<Product> getAllProducts() throws Exception{
 		System.out.println("Product Dao getAllProducts 호출됨");
 		Class.forName(DB_DRIVER);
-		try(Connection con=DriverManager.getConnection(DB_URL,DB_USER,DB_PW);
+		   Connection con=DriverManager.getConnection(DB_URL,DB_USER,DB_PW);
 			PreparedStatement stmt=con.prepareStatement("select * from product");
 			ResultSet rs=stmt.executeQuery();
-				) {	
+				 	
 			
 			List<Product> list=new ArrayList<>();
 			while(rs.next()) {
@@ -39,8 +39,7 @@ public class ProductDao {
 				String pimg=rs.getString("pimg");
 				list.add(new Product(prodname, pimg, prodcode, price));
 			}
-			return list;
-		}		
+			return list;		
 	}	
 	
 }
